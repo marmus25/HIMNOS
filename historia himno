@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia del Himno Nacional de Bolivia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        .section {
+            display: none;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Historia del Himno Nacional de Bolivia</h1>
+
+        <div id="section1" class="section active">
+            <p><strong>Introducción:</strong> El Himno Nacional de Bolivia es uno de los símbolos patrios más importantes del país. Es un canto solemne que refleja el amor y el respeto a la nación boliviana.</p>
+            <button onclick="nextSection('section2')">Siguiente</button>
+        </div>
+
+        <div id="section2" class="section">
+            <p><strong>Composición:</strong> La letra del Himno Nacional fue escrita por el poeta José Ignacio de Sanjinés, mientras que la música fue compuesta por el músico belga Leopoldo Benedetto Vincenti.</p>
+            <button onclick="nextSection('section3')">Siguiente</button>
+        </div>
+
+        <div id="section3" class="section">
+            <p><strong>Declaración Oficial:</strong> Fue declarado Himno Nacional de Bolivia el 18 de noviembre de 1851 por el Congreso de Bolivia.</p>
+            <button onclick="nextSection('section4')">Siguiente</button>
+        </div>
+
+        <div id="section4" class="section">
+            <p><strong>Significado:</strong> Cada estrofa del himno refleja la valentía de los bolivianos y el orgullo de pertenecer a una nación libre e independiente.</p>
+            <button onclick="nextSection('section5')">Siguiente</button>
+        </div>
+
+        <div id="section5" class="section">
+            <p><strong>Uso del Himno:</strong> El Himno Nacional se interpreta en actos oficiales, ceremonias patrióticas y eventos de gran importancia en Bolivia.</p>
+            <button onclick="nextSection('section6')">Siguiente</button>
+        </div>
+
+        <div id="section6" class="section">
+            <p><strong>Conclusión:</strong> El Himno Nacional de Bolivia no solo es un símbolo de identidad, sino también un recordatorio de la lucha por la libertad y la independencia.</p>
+            <button onclick="nextSection('section1')">Volver al inicio</button>
+        </div>
+    </div>
+
+    <script>
+        function nextSection(sectionId) {
+            const allSections = document.querySelectorAll('.section');
+            allSections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            const nextSection = document.getElementById(sectionId);
+            nextSection.classList.add('active');
+        }
+    </script>
+</body>
+</html>

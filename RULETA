@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de la Ruleta - Vocabulario Musical</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .ruleta {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 10px solid #333;
+            margin: 20px auto;
+            background: conic-gradient(
+                red 0deg 30deg,
+                yellow 30deg 60deg,
+                blue 60deg 90deg,
+                green 90deg 120deg,
+                orange 120deg 150deg,
+                purple 150deg 180deg,
+                brown 180deg 210deg,
+                pink 210deg 240deg,
+                cyan 240deg 270deg,
+                lime 270deg 300deg,
+                magenta 300deg 330deg,
+                black 330deg 360deg
+            );
+        }
+
+        .ruleta span {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .flecha {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 20px solid #f00;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #e65c00;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Juego de la Ruleta sobre Vocabulario Musical</h1>
+    <div class="ruleta">
+        <span id="letra">G</span>
+        <div class="flecha"></div>
+    </div>
+    <button onclick="girarRuleta()">Girar Ruleta</button>
+
+    <script>
+        const letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
+
+        function girarRuleta() {
+            const aleatorio = Math.floor(Math.random() * letras.length);
+            const angulo = aleatorio * (360 / letras.length);
+
+            // Girar la ruleta
+            document.querySelector('.ruleta').style.transition = 'transform 3s ease-out';
+            document.querySelector('.ruleta').style.transform = `rotate(${3600 + angulo}deg)`;
+
+            // Mostrar la letra seleccionada
+            setTimeout(() => {
+                document.getElementById('letra').innerText = letras[aleatorio];
+            }, 3000); // Esperar que el giro termine
+        }
+    </script>
+
+</body>
+</html>
